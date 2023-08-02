@@ -11,7 +11,11 @@
             {
                 return "II";
             }
-            return "III";
+            else if (chiffreArabe == 3)
+            {
+                return "III";
+            }
+            return "IV";
         }
     }
 }
