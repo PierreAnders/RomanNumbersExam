@@ -18,5 +18,17 @@ namespace RomanNumbersExam.Test
             
             Assert.Equal(résultatAttendu, nombreRomain);
         }
+
+        [Fact(DisplayName = "Etant donné le chiffre 4 " +
+                            "Quand je le convertis en nombre romains" +
+                            "Alors j'obtiens IV")]
+        public void TestNombre4()
+        {
+            const uint chiffreArabe = 4;
+
+            var nombreRomain = ConvertisseurNombresRomains.Convertir(chiffreArabe);
+
+            Assert.Equal("IV", nombreRomain);
+        }
     }
 }
