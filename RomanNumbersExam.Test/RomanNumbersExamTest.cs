@@ -13,5 +13,17 @@ namespace RomanNumbersExam.Test
 
             Assert.Equal("I", nombreRomain);
         }
+
+        [Fact(DisplayName = "Etant donné le chiffre 2 " +
+                            "Quand je le convertis en nombre romains" +
+                            "Alors j'obtiens II")]
+        public void TestNombre2()
+        {
+            const uint chiffreArabe = 2;
+
+            var nombreRomain = ConvertisseurNombresRomains.Convertir(chiffreArabe);
+
+            Assert.Equal("II", nombreRomain);
+        }
     }
 }
