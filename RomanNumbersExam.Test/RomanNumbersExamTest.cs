@@ -2,40 +2,21 @@ namespace RomanNumbersExam.Test
 {
     public class RomanNumberExamTest
     {
-        [Fact(DisplayName = "Etant donné le chiffre 1 " +
-                            "Quand je le convertis en nombre romains" + 
-                            "Alors j'obtiens I")]
-        public void TestNombre1()
+
+        [Theory(DisplayName = "Etant donné le chiffre <nombreUnités>" + 
+                               "Quand je le convertis en nombres romains" +
+                                "Alors j'obtiens <nombreUnités> fois I")]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+
+        public void TestUnité(uint nombreUnités)
         {
-            const uint chiffreArabe = 1;
+            var nombreRomain = ConvertisseurNombresRomains.Convertir(nombreUnités);
 
-            var nombreRomain = ConvertisseurNombresRomains.Convertir(chiffreArabe);
-
-            Assert.Equal("I", nombreRomain);
-        }
-
-        [Fact(DisplayName = "Etant donné le chiffre 2 " +
-                            "Quand je le convertis en nombre romains" +
-                            "Alors j'obtiens II")]
-        public void TestNombre2()
-        {
-            const uint chiffreArabe = 2;
-
-            var nombreRomain = ConvertisseurNombresRomains.Convertir(chiffreArabe);
-
-            Assert.Equal("II", nombreRomain);
-        }
-
-        [Fact(DisplayName = "Etant donné le chiffre 3 " +
-                            "Quand je le convertis en nombre romains" +
-                            "Alors j'obtiens III")]
-        public void TestNombre3()
-        {
-            const uint chiffreArabe = 3;
-
-            var nombreRomain = ConvertisseurNombresRomains.Convertir(chiffreArabe);
-
-            Assert.Equal("III", nombreRomain);
+            var résultatAttendu = new string(Enumerable.Repeat('I', (int)nombreUnités).ToArray());
+            
+            Assert.Equal(résultatAttendu, nombreRomain);
         }
     }
 }

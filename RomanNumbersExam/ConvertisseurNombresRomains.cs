@@ -6,8 +6,12 @@
         {
             if (chiffreArabe == 1) {
                 return "I";
+            } 
+            else if (chiffreArabe == 2)
+            {
+                return "II";
             }
-            return "II";
+            return "III";
         }
     }
 }
