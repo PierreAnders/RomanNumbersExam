@@ -2,20 +2,16 @@
 {
     public class ConvertisseurNombresRomains
     {
-       public static string Convertir(uint chiffreArabe)
+        public static string Convertir(uint chiffreArabe)
         {
-            if (chiffreArabe == 1) {
-                return "I";
-            } 
-            else if (chiffreArabe == 2)
+            switch (chiffreArabe)
             {
-                return "II";
+                case <= 3:
+                    return new string('I', (int)chiffreArabe);
+
+                default:
+                    return "IV";
             }
-            else if (chiffreArabe == 3)
-            {
-                return "III";
-            }
-            return "IV";
         }
     }
 }
