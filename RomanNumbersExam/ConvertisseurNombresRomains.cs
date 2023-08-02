@@ -7,7 +7,7 @@
             if (chiffreArabe == 1) {
                 return "I";
             }
-            return "";
+            return "II";
         }
     }
 }
