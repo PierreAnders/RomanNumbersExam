@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RomanNumbersExam\RomanNumbersExam.csproj" />
+  </ItemGroup>
+
 </Project>
